@@ -1,0 +1,537 @@
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ cd ..
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git
+$ mkdir sign
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git
+$ cd sign/
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign
+$ echo "This is file 1" >>file1.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign
+$ git intit
+git: 'intit' is not a git command. See 'git --help'.
+
+The most similar command is
+        init
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign
+$ git init
+Initialized empty Git repository in C:/Users/Administrator/devops/git/sign/.git/
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ echo "This is file 1" >>file1.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ cat file1.txt
+This is file 1
+This is file 1
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ rm file1.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ echo "This is file 1" >>file1.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ git add .
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ git commit -m "learnig signed commit" --author="Narendra Modi <Narendramode@gmail.com"
+fatal: --author 'Narendra Modi <Narendramode@gmail.com' is not 'Name <email>' and matches no existing author
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ git commit -m "learnig signed commit" --author="Narendra Modi <narendramodi@gmail.com"
+fatal: --author 'Narendra Modi <narendramodi@gmail.com' is not 'Name <email>' and matches no existing author
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ git commit -m "learnig signed commit" --author="Narendra Modi <narendramodi@gmail.com">
+bash: syntax error near unexpected token `newline'
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ git commit -m "learnig signed commit" --author="Narendra Modi <narendramodi@gmail.com>"
+[master (root-commit) f72274c] learnig signed commit
+ Author: Narendra Modi <narendramodi@gmail.com>
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ git log
+commit f72274c53adacf4d7c04f768b07e3f3b02a9c17c (HEAD -> master)
+Author: Narendra Modi <narendramodi@gmail.com>
+Date:   Fri Jan 17 10:09:36 2025 +0530
+
+    learnig signed commit
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ cd lfs
+bash: cd: lfs: No such file or directory
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ cd ..
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git
+$ cd lfs/
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git commit -m "learnig signed commit" --author="Narendra Modi <narendramodi@gmail.com>"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ echo "This is file 2" >>file2.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git add .
+warning: in the working copy of 'file2.txt', LF will be replaced by CRLF the next time Git touches it
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git commit -m "learnig signed commit" --author="Narendra Modi <narendramodi@gmail.com>"
+[master f567143] learnig signed commit
+ Author: Narendra Modi <narendramodi@gmail.com>
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git log
+commit f5671431e73aebde243e67a236cfc9d5d7ce643b (HEAD -> master)
+Author: Narendra Modi <narendramodi@gmail.com>
+Date:   Fri Jan 17 10:12:28 2025 +0530
+
+    learnig signed commit
+
+commit f2785eaa58c5f1fd8ebafe1ee9f5bba0fbe5709f (origin/master)
+Author: kaushaldarji7182 <kaushaldarji7182@gmail.com>
+Date:   Fri Jan 17 09:53:48 2025 +0530
+
+    jpeg file added
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ gpg --full-generate-key
+gpg (GnuPG) 2.4.5-unknown; Copyright (C) 2024 g10 Code GmbH
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+gpg: directory '/c/Users/Administrator/.gnupg' created
+Please select what kind of key you want:
+   (1) RSA and RSA
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (9) ECC (sign and encrypt) *default*
+  (10) ECC (sign only)
+  (14) Existing key from card
+Your selection? 1
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (3072) 4096
+Requested keysize is 4096 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 0
+Key does not expire at all
+Is this correct? (y/N) y
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: kaushaldarji7182
+Email address: kaushaldarji7182@gmail.com
+Comment: GPG key generation
+You selected this USER-ID:
+    "kaushaldarji7182 (GPG key generation) <kaushaldarji7182@gmail.com>"
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: agent_genkey failed: Operation cancelled
+Key generation failed: Operation cancelled
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ gpg --full-generate-key
+gpg (GnuPG) 2.4.5-unknown; Copyright (C) 2024 g10 Code GmbH
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (9) ECC (sign and encrypt) *default*
+  (10) ECC (sign only)
+  (14) Existing key from card
+Your selection? 1
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (3072) 4096
+Requested keysize is 4096 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      <n>  = key expires in n days
+      <n>w = key expires in n weeks
+      <n>m = key expires in n months
+      <n>y = key expires in n years
+Key is valid for? (0) 0
+Key does not expire at all
+Is this correct? (y/N) y
+
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: kaushaldarji7182
+Email address: kaushaldarji7182@gmail.com
+Comment: GPG key generated
+You selected this USER-ID:
+    "kaushaldarji7182 (GPG key generated) <kaushaldarji7182@gmail.com>"
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? o
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: /c/Users/Administrator/.gnupg/trustdb.gpg: trustdb created
+gpg: directory '/c/Users/Administrator/.gnupg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/c/Users/Administrator/.gnupg/openpgp-revocs.d/B4427140CA4506D992FA1766BBB5D4D5EAFDA3CA.rev'
+public and secret key created and signed.
+
+pub   rsa4096 2025-01-17 [SC]
+      B4427140CA4506D992FA1766BBB5D4D5EAFDA3CA
+uid                      kaushaldarji7182 (GPG key generated) <kaushaldarji7182@gmail.com>
+sub   rsa4096 2025-01-17 [E]
+
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ gpg --list-secret-keys --keyid-format long
+gpg: checking the trustdb
+gpg: marginals needed: 3  completes needed: 1  trust model: pgp
+gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
+[keyboxd]
+---------
+sec   rsa4096/BBB5D4D5EAFDA3CA 2025-01-17 [SC]
+      B4427140CA4506D992FA1766BBB5D4D5EAFDA3CA
+uid                 [ultimate] kaushaldarji7182 (GPG key generated) <kaushaldarji7182@gmail.com>
+ssb   rsa4096/81B01C0E96CFCDA7 2025-01-17 [E]
+
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ echo "this is file 2" >> file2.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git add .
+warning: in the working copy of 'file2.txt', LF will be replaced by CRLF the next time Git touches it
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git commit -m "adding new file"
+[master d600951] adding new file
+ 1 file changed, 1 insertion(+)
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 566 bytes | 283.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:kaushaldarji7182/lfs.git
+   f2785ea..d600951  master -> master
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ echo "file 3" >> file3.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git add .
+warning: in the working copy of 'file3.txt', LF will be replaced by CRLF the next time Git touches it
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git commit -S -m "encryption"
+error: gpg failed to sign the data:
+gpg: skipped "kaushaldarji7182 <kaushaldarji7182@gmail.com>": No secret key
+[GNUPG:] INV_SGNR 9 kaushaldarji7182 <kaushaldarji7182@gmail.com>
+[GNUPG:] FAILURE sign 17
+gpg: signing failed: No secret key
+
+fatal: failed to write commit object
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git config --global user.signingkey BBB5D4D5EAFDA3CA
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git log
+commit d60095186d38336140a6ebe14810294c12474cce (HEAD -> master, origin/master)
+Author: kaushaldarji7182 <kaushaldarji7182@gmail.com>
+Date:   Fri Jan 17 10:25:59 2025 +0530
+
+    adding new file
+
+commit f5671431e73aebde243e67a236cfc9d5d7ce643b
+Author: Narendra Modi <narendramodi@gmail.com>
+Date:   Fri Jan 17 10:12:28 2025 +0530
+
+    learnig signed commit
+
+commit f2785eaa58c5f1fd8ebafe1ee9f5bba0fbe5709f
+Author: kaushaldarji7182 <kaushaldarji7182@gmail.com>
+Date:   Fri Jan 17 09:53:48 2025 +0530
+
+    jpeg file added
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git log --show-signature
+commit d60095186d38336140a6ebe14810294c12474cce (HEAD -> master, origin/master)
+Author: kaushaldarji7182 <kaushaldarji7182@gmail.com>
+Date:   Fri Jan 17 10:25:59 2025 +0530
+
+    adding new file
+
+commit f5671431e73aebde243e67a236cfc9d5d7ce643b
+Author: Narendra Modi <narendramodi@gmail.com>
+Date:   Fri Jan 17 10:12:28 2025 +0530
+
+    learnig signed commit
+
+commit f2785eaa58c5f1fd8ebafe1ee9f5bba0fbe5709f
+Author: kaushaldarji7182 <kaushaldarji7182@gmail.com>
+Date:   Fri Jan 17 09:53:48 2025 +0530
+
+    jpeg file added
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git config  --global commit.gpgsign true
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git commit -S -m "ecryption"
+[master 531dd33] ecryption
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file3.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git log --show-singature
+fatal: unrecognized argument: --show-singature
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git log --show-signature
+commit 531dd33076f8cf85780bd350b502d0fdb51bbc02 (HEAD -> master)
+gpg: Signature made Fri Jan 17 10:31:16 2025 IST
+gpg:                using RSA key B4427140CA4506D992FA1766BBB5D4D5EAFDA3CA
+gpg: Good signature from "kaushaldarji7182 (GPG key generated) <kaushaldarji7182@gmail.com>" [ultimate]
+Author: kaushaldarji7182 <kaushaldarji7182@gmail.com>
+Date:   Fri Jan 17 10:31:16 2025 +0530
+
+    ecryption
+
+commit d60095186d38336140a6ebe14810294c12474cce (origin/master)
+Author: kaushaldarji7182 <kaushaldarji7182@gmail.com>
+Date:   Fri Jan 17 10:25:59 2025 +0530
+
+    adding new file
+
+commit f5671431e73aebde243e67a236cfc9d5d7ce643b
+Author: Narendra Modi <narendramodi@gmail.com>
+Date:   Fri Jan 17 10:12:28 2025 +0530
+
+    learnig signed commit
+
+commit f2785eaa58c5f1fd8ebafe1ee9f5bba0fbe5709f
+Author: kaushaldarji7182 <kaushaldarji7182@gmail.com>
+Date:   Fri Jan 17 09:53:48 2025 +0530
+
+    jpeg file added
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 936 bytes | 936.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:kaushaldarji7182/lfs.git
+   d600951..531dd33  master -> master
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ gpg --armor--export kaushaldarji7182@gmail.com
+gpg: invalid option "--armor--export"
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ gpg --armor --export kaushaldarji7182@gmail.com
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+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
+=tyzd
+-----END PGP PUBLIC KEY BLOCK-----
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ gpg --armor --export kaushaldarji7182@gmail.com >>a.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ cd ..
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git
+$ mkdir sign
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git
+$ cd sign/
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign
+$ echo "This is file 1" >>file1.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign
+$ git intit
+git: 'intit' is not a git command. See 'git --help'.
+
+The most similar command is
+        init
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign
+$ git init
+Initialized empty Git repository in C:/Users/Administrator/devops/git/sign/.git/
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ echo "This is file 1" >>file1.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ cat file1.txt
+This is file 1
+This is file 1
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ rm file1.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ echo "This is file 1" >>file1.txt
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+$ git add .
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign (master)
+Date:   Fri Jan 17 10:12:28 2025 +0530^Cl.com>bl.com>in/master)<kaushaldarji7182@gmail.com>" [ultimate]2FA1766BBB5D4D5EAFDA3CA.rev'
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ history | grep "2025-01-16"
+  395  history | grep "2025-01-16"
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ history | tail -n 50
+  347  git remote add origin git@github.com:kaushaldarji7182/lfs.git
+  348  git push -u origin master
+  349  clear
+  350  cd ..
+  351  mkdir sign
+  352  cd sign/
+  353  echo "This is file 1" >>file1.txt
+  354  git intit
+  355  git init
+  356  echo "This is file 1" >>file1.txt
+  357  cat file1.txt
+  358  rm file1.txt
+  359  echo "This is file 1" >>file1.txt
+  360  git add .
+  361  git commit -m "learnig signed commit" --author="Narendra Modi <Narendramode@gmail.com"
+  362  git commit -m "learnig signed commit" --author="Narendra Modi <narendramodi@gmail.com"
+  363  git commit -m "learnig signed commit" --author="Narendra Modi <narendramodi@gmail.com">
+  364  git commit -m "learnig signed commit" --author="Narendra Modi <narendramodi@gmail.com>"
+  365  git log
+  366  cd lfs
+  367  cd ..
+  368  cd lfs/
+  369  git commit -m "learnig signed commit" --author="Narendra Modi <narendramodi@gmail.com>"
+  370  echo "This is file 2" >>file2.txt
+  371  git add .
+  372  git commit -m "learnig signed commit" --author="Narendra Modi <narendramodi@gmail.com>"
+  373  git log
+  374  gpg --full-generate-key
+  375  gpg --full-generate-key
+  376  gpg --list-secret-keys --keyid-format long
+  377  echo "this is file 2" >> file2.txt
+  378  git add .
+  379  git commit -m "adding new file"
+  380  git push
+  381  echo "file 3" >> file3.txt
+  382  git add .
+  383  git commit -S -m "encryption"
+  384  git config --global user.signingkey BBB5D4D5EAFDA3CA
+  385  git log
+  386  git log --show-signature
+  387  git config  --global commit.gpgsign true
+  388  git commit -S -m "ecryption"
+  389  git log --show-singature
+  390  git log --show-signature
+  391  git push
+  392  gpg --armor--export kaushaldarji7182@gmail.com
+  393  gpg --armor --export kaushaldarji7182@gmail.com
+  394  gpg --armor --export kaushaldarji7182@gmail.com >>a.txt
+  395  history | grep "2025-01-16"
+  396  history | tail -n 50
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$ cat session.log
+bash: $'\302\201cat': command not found
+
+Administrator@0ab0b042538a58a MINGW64 ~/devops/git/lfs (master)
+$
