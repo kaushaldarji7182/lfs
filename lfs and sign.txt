@@ -12,13 +12,6 @@ Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign
 $ echo "This is file 1" >>file1.txt
 
 Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign
-$ git intit
-git: 'intit' is not a git command. See 'git --help'.
-
-The most similar command is
-        init
-
-Administrator@0ab0b042538a58a MINGW64 ~/devops/git/sign
 $ git init
 Initialized empty Git repository in C:/Users/Administrator/devops/git/sign/.git/
 
